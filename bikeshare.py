@@ -174,7 +174,7 @@ def convert(seconds):
     '''
     min, sec = divmod(seconds, 60)
     hour, min = divmod(min, 60)
-    return '%d:%02d:%02d' % (hour, min, sec)
+    return f'{hour}:{min}:{sec}'
 
 
 def trip_duration_stats(df):
