@@ -29,12 +29,14 @@ def get_filters():
 
     #  get user input for month (all, january, february, ... , june)
     list_of_months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december', 'all']
+
     while month.lower() not in list_of_months:
         print('What month would you like to filter by? Please enter a month (NON-ABBREVIATED) from January to June or enter "all" to apply no month filter.')
         month = input()
     
     #  get user input for day of week (all, monday, tuesday, ... sunday)
     LIST_OF_DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
+    
     while day.lower() not in LIST_OF_DAYS:
         print('What day of the week would you like to filter by? Please enter a day of the week (NON-ABBREVIATED) or enter "all" to apply no day filter.')
         day = input()
@@ -112,16 +114,19 @@ def time_stats(df):
 
     #most popular month
     pop_month = df['month'].mode()[0]
+
     print(f"Most Frequent Month and number of trips:\n \
     {pop_month}: {len(df[df['month'] == pop_month])}\n")
 
     #popular day
     pop_day = df['day_of_week'].mode()[0]
+
     print(f"Most Frequent Day and number of trips:\n \
     {pop_day}: {len(df[df['day_of_week'] == pop_day])}\n")
 
     #popular hour
     pop_hour = df['hour'].mode()[0]
+
     print(f"Most Frequent hour and number of  trips:\n \
     {pop_hour}: {len(df[df['hour'] == pop_hour])}")
 
@@ -144,16 +149,19 @@ def station_stats(df):
 
     #  display most commonly used start station
     pop_start = df['Start Station'].mode()[0]
+
     print(f"Most Departure station and number of trips:\n \
     {pop_start}: {len(df[df['Start Station'] == pop_start])}\n")
 
     # display most commonly used end station
     pop_end = df['End Station'].mode()[0]
+
     print(f"Most Frequent arrival station and number of trips:\n \
     {pop_end}: {len(df[df['End Station'] == pop_end])}\n")
 
     #  display most commonly used end station
     pop_end = df['End Station'].mode()[0]
+
     print(f"Most Frequent arrival station and number of trips:\n \
     {pop_end}: {len(df[df['End Station'] == pop_end])}\n")
 
@@ -161,6 +169,7 @@ def station_stats(df):
     pop_combo = df.groupby(['Start Station','End Station']).size().idxmax()
     print(f"The most popular trip was from {pop_combo[0]} to {pop_combo[1]} with {len(df[(df['Start Station'] == pop_combo[0]) & (df['End Station'] == pop_combo[1])])} trips")
     #  display most frequent combination of start station and end station trip
+
     pop_combo = df.groupby(['Start Station','End Station']).size().idxmax()
     print(f"The most popular trip was from {pop_combo[0]} to {pop_combo[1]} with {len(df[(df['Start Station'] == pop_combo[0]) & (df['End Station'] == pop_combo[1])])} trips")
 
@@ -175,7 +184,7 @@ def convert(seconds):
     '''
     min, sec = divmod(seconds, 60)
     hour, min = divmod(min, 60)
-    return '%d:%02d:%02d' % (hour, min, sec)
+    return f'{hour}:{min}:{sec}'
 
 
 def trip_duration_stats(df):
