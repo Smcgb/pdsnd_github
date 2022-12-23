@@ -171,6 +171,7 @@ def convert(seconds):
     '''
     Uses divmod to make time reporting in seconds
     reflect normal time reporting of h/m/s
+    returns a string with appropriate timee conversion
     '''
     min, sec = divmod(seconds, 60)
     hour, min = divmod(min, 60)
