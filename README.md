@@ -1,21 +1,18 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+## Shane Boyce
 
-### Date created
-12/22/22
+### 12/19/2022
 
-### City Bikeshare Data
+### Udacity Bikeshare Data
 
-### Description
-Interactive script to return simmary info for 3 cities data on the bikeshare dataset
+###  Bikeshare analysis
+A jupyter notebook and python script are attached to allow users to explore multiple summary statistics of the bikeshare data with simple input instead of working with pandas or other tools directly.
+
+The program uses a while loop to ensure correct input measures to display summary statistics
 
 ### Files used
-bikeshare.py
-washington.csv
-new_york_city.csv
-chicago.csv
+
+bikeshare.ipynb - cell blocked version of the code
+bikeshare.py - functional version for running the program as a python program
 
 ### Credits
-This is a guided project from the intro to data science nano degree at Udacity
-
-
-### remind myself to learn makrdown
+Part of a series of courses provided by Udacity.com
